@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package llm;
+
+option go_package = "github.com/itsLeonB/aishiteru/gen/go/llm";
+
+service LLMService {
+  rpc Prompt (PromptRequest) returns (PromptResponse);
+}
+
+message PromptRequest {
+  string prompt = 1;
+  map<string, string> metadata = 2;
+}
+
+message PromptResponse {
+  string response = 1;
+}
